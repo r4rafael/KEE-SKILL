@@ -1,57 +1,59 @@
 # KEE-SKILL — Knowledge Extractor Engine
 
 > Transforme qualquer canal do YouTube em uma Skill de IA.
+> Skill que gera skills a partir de conteudo de canais.
 
 ## 📥 Instalação
 
-Para instalar esta skill no seu agente de IA:
-
 ```bash
-# Clone o repositório
 git clone https://github.com/r4rafael/KEE-SKILL.git
 cd KEE-SKILL
-
-# Ou simplesmente aponte o agente para o arquivo da skill
-# KEE-SKILL.md
+pip install -r requirements.txt
 ```
-
-Depois de instalada, o agente saberá:
-
-- **Baixar transcrições** de qualquer canal/playlist YouTube
-- **Extrair o KnowHow** — temas, assuntos e conhecimento compilado
-- **Gerar Apostilas** — livro de estudo completo
-- **Gerar Playbooks** — guias práticos por tema
-- **Gerar Skills** — criar novas skills de IA a partir do conhecimento extraído
 
 ## 🚀 Uso
 
-Basta pedir ao agente:
+### Como agente (lendo a skill):
 
-> "Baixa o canal @BuracoDeMinhoca e me ajuda a estudar trading"
+Aponte seu agente para `KEE-SKILL.md` — ele saberá como:
 
-Ou:
+1. **Baixar transcricoes** de videos/playlists/canais
+2. **Extrair KnowHow** — temas, assuntos, resumo
+3. **Gerar Apostila** — livro de estudo completo
+4. **Gerar Playbooks** — guias praticos por tema
+5. **Gerar Skills** — criar novas `.skill.md` a partir do conhecimento
 
-> "Pega essa playlist https://youtube.com/playlist?list=... e cria uma skill com o conhecimento"
+### Direto no terminal:
 
-## 📁 Estrutura gerada
+```bash
+python src/baixar-knowhow.py "https://youtube.com/playlist?list=..."
+python src/baixar-knowhow.py --pasta
+python src/baixar-knowhow.py
+```
+
+## 📁 Estrutura
 
 ```
-projeto/
-├── transcricoes/NomeDoCanal/     ← Transcrições (.txt)
-├── knowhow/NomeDoCanal.md        ← KnowHow compilado
-├── apostilas/NomeDoCanal/        ← Apostila + Playbooks
-│   ├── APOSTILA - Canal.md
-│   └── playbooks/
-└── skills-geradas/               ← Skills geradas (.skill.md)
-    └── KEE-Canal.skill.md
+KEE-SKILL/
+├── KEE-SKILL.md              ← Skill para agente (instrucoes)
+├── README.md
+├── skill.json                ← Manifesto
+├── requirements.txt          ← Dependencias Python
+├── install.bat               ← Instalador Windows
+├── .gitignore
+├── .github/workflows/       ← CI
+├── src/
+│   └── baixar-knowhow.py    ← Engine completa
+└── examples/
+    └── KEE-BuracoDeMinhoca.skill.md  ← Exemplo de skill gerada
 ```
 
 ## 🤖 Meta-Skill
 
-O KEE é uma **skill que gera skills**:
-1. Você cola um link do YouTube
+O KEE e uma **skill que gera skills**:
+1. Cole um link do YouTube
 2. O agente extrai TODO o conhecimento
-3. O agente gera uma `.skill.md` com aquele conhecimento
+3. Gera uma `.skill.md` com aquele conhecimento
 4. Qualquer outro agente que instalar essa skill passa a ter o conhecimento do canal
 
 ---

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+.venv/
+venv/
+
+# Dados gerados
+baixados/
+transcricoes/
+knowhow/
+apostilas/
+skills-geradas/
+tmp_audio/
+tmp_subs/
+
+# Cookies
+cookies.txt
+
+# OS
+.DS_Store
+Thumbs.db

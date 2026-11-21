@@ -1,0 +1,21 @@
+{
+  "name": "KEE-SKILL",
+  "title": "Knowledge Extractor Engine",
+  "description": "Extrai conhecimento de canais YouTube: transcricao, knowhow, apostila, playbooks. E gera novas skills a partir do conteudo extraido.",
+  "version": "1.0.0",
+  "author": "r4rafael",
+  "tags": ["youtube", "transcricao", "knowhow", "apostila", "playbook", "skill-generator"],
+  "agent": ["general", "explore"],
+  "repository": "https://github.com/r4rafael/KEE-SKILL",
+  "skills": {
+    "baixar-knowhow": {
+      "description": "Engine principal: baixa transcricoes, gera knowhow, apostila e playbooks",
+      "path": "src/baixar-knowhow.py"
+    }
+  },
+  "requirements": {
+    "python": ["yt-dlp", "faster-whisper", "openai-whisper"],
+    "system": ["deno"],
+    "optional": ["cookies.txt"]
+  }
+}
